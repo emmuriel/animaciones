@@ -12,40 +12,144 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="animaciones.css">
-    <style>        
+    <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Architects+Daughter&family=Orbitron&family=Pacifico&family=Press+Start+2P&family=Shizuru&display=swap');      
         @keyframes slidein1 {
-         from {
-            margin-left:100%;
-            width:100%;
-            opacity: 50%;
+            from {
+                margin-left:100%;
+                width:100%;
+                opacity: 50%;
+            }
+                
+            to {
+                margin-left:0%;
+                width:50%;
+                opacity: 100%;
+            }
         }
-            
-        to {
-            margin-left:0%;
-            width:50%;
-            opacity: 100%;
+        @keyframes rebota{
+            from {left: 0; top: 0;}  /*Se puedeponer 0% y 100%, tanto en el from como en el too*/
+            10% {left:0vw;top:100vh; }
+            20% {left:5vw;top:80vh; }
+            30% {left:7vw;top:1vh; }
+            40% {left:15vw;top:80vh; }
+            50% {left:25vw;top:1vh; }
+            70% {left:30vw;top:50vh; }
+            80% {left:35vw;top:20vh; }
+            90% {left:40vw;top:0vh; }
+            to {left: 100vw; top:100vh; }
         }
-        }
+        @keyframes recorrido {
+            from {left: 0; top: 0;}  
+                20% {left:50vw;top:80vh; }
+                60% {left:90vw;top:10vh; }
+            to {left: 100vw; top:100vh; }
 
-        @keyframes animatedBackground{
-        from { background-position: 0 0; }
-        to { background-position: 100% 0; }
         }
-
         
         @keyframes cambiaColor{
-        from { background-position: 0 0; }
-        to { background-position: 100% 0; }
+            from {color: blue;font-size: 4rem;}  
+            10% {color: aqua; font-size: 5rem; }
+            20% {color:yellow;font-size: 4rem;}
+            50% {color:red; font-size: 3rem; }
+            70% {color: green; font-size: 8rem; }
+            80% {color: black; font-size: 5rem;}
+            to {color: blueviolet; font-size: 6rem; }
+        }
+        @keyframes palantePatras{
+        from {
+            -webkit-transform: rotate(0deg);
+            transform: rotateY(0deg);
+        }
+        50%{
+            -webkit-transform: rotate(180deg);
+            transform: rotateY(180deg);
+        } to {
+            -webkit-transform: rotate(360deg);
+            transform: rotateY(360deg);
+            }
+        }
+        .nums :nth-child(1){
+            height: 10vh;
+            width: 10vw;
+            font-family: 'Press Start 2P', cursive;
+         
+            animation-duration: 3s;
+            animation-name: slidein1;
+            position: fixed;
+            animation-iteration-count: infinite;
+            animation-direction:normal;
+            animation-delay: 1s;
+            color:crimson;
+        }
+        .nums :nth-child(2){
+            height: 10vh;
+           
+            animation-duration: 8s;
+            animation-name: rebota;
+            animation-iteration-count: 1;
+            animation-direction:normal;
+            animation-delay: 1s;
+            font-family: 'Architects Daughter', cursive;
+        }
+        .nums :nth-child(3){
+            animation-duration: 5s;
+            animation-name: palantePatras;
+            animation-iteration-count: infinite;    
+            font-family: 'Shizuru', cursive;
+        }
+        .nums :nth-child(4){
+            font-family: 'Architects Daughter', cursive;
+        }
+        .nums :nth-child(5){
+            font-family: 'Pacifico', cursive;
+        }
+        .nums :nth-child(6){
+            font-family: 'Orbitron', sans-serif;
+            animation-name: cambiaColor;
+            animation-duration: 10s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+        .nums :nth-child(7){
+            font-family: 'Press Start 2P', cursive;
+            animation-name: recorrido;  
+            position: fixed; 
+            animation-delay: 1s; 
+            animation-duration: 6s; 
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            animation-play-state: running; /*Esta propiedad puede modificarse con javascript para ir juagndo e ir parando*/
+            animation-timing-function: ease-in-out;
+            color: red;
+            font-size: 6rem;
         }
 
         body{
-
+            background-color: darkslategrey;
+            width: 100vw;
+            height: 100vh;
         }
+
         header{
-
-         }
-        footer{
+            font-family: 'Orbitron', sans-serif;
+            color: aquamarine;
         }
+
+        footer{
+            font-family: 'Orbitron', sans-serif;
+            color:white;
+            position: absolute;
+            margin-bottom: 0;
+        }
+
+        .nums{
+            background-color: darkcyan;
+            font-size: 5rem;
+        }
+
+   
+  
 
 
 </style>
@@ -91,7 +195,7 @@
             <div id="fecha">Fecha del sorteo: </div>
         </div>
     </main>
-    <footer>Elisabet Martin Muriel &copy;</footer>
+    <footer> &copy;Elisabet Martin Muriel</footer>
 </body>
 
 </html>
