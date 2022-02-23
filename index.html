@@ -19,8 +19,7 @@
                 margin-left:100%;
                 width:100%;
                 opacity: 50%;
-            }
-                
+            }    
             to {
                 margin-left:0%;
                 width:50%;
@@ -69,11 +68,17 @@
             transform: rotateY(360deg);
             }
         }
+        @keyframes animar{
+            0% {left: 0;top: 0;}
+            10% {left: 5rem;top: 0rem;}
+            30% {top: 5rem;left: 5rem;}
+            60%{top: 5rem;left: 0;}
+            100% {top: 0;left: 0;}
+        }
         .nums :nth-child(1){
             height: 10vh;
             width: 10vw;
             font-family: 'Press Start 2P', cursive;
-         
             animation-duration: 3s;
             animation-name: slidein1;
             position: fixed;
@@ -100,9 +105,19 @@
         }
         .nums :nth-child(4){
             font-family: 'Architects Daughter', cursive;
+            transform:translateY(), rotate(180deg);
+            transition-duration: 3s;
+            color:white;
+            animation-name: rebota;
+            animation-direction: alternate-reverse;
         }
         .nums :nth-child(5){
             font-family: 'Pacifico', cursive;
+            padding: .2rem .3rem 1rem .3rem;
+            position: absolute;
+            animation-name: animar;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
         }
         .nums :nth-child(6){
             font-family: 'Orbitron', sans-serif;
