@@ -1,0 +1,29 @@
+        
+          @keyframes slidein1 {
+            from {
+              margin-left:100%;
+              width:100%;
+              opacity: 50%;
+            }
+          
+            to {
+             margin-left:0%;
+             width:50%;
+             opacity: 100%;
+           }
+        }
+
+        @keyframes animatedBackground{
+            from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+        }
+
+body{
+    
+}
+header{
+
+}
+footer{
+
+}
